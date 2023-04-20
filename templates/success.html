@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <title>success</title>
+</head>
+
+<body>
+    <p>File(s) uploaded successfully</p>
+    <p>File Name: {{name}}</p>
+    {% if plot %}
+    <div>
+        <img src="data:image/png;base64,{{ plot }}" alt="Plot">
+    </div>
+    {% endif %}
+</body>
+
+</html>

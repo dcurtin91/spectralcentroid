@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>upload</title>
+    <!-- <link rel="stylesheet" href="app.css"> -->
+</head>
+
+<body>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="button" id="loadFileXml1" value="File One" onclick="document.getElementById('file1').click();" />
+        <input type="file" style="display:none;" id="file1" name="file1" />
+        <input type="button" id="loadFileXml2" value="File Two" onclick="document.getElementById('file2').click();" />
+        <input type="file" style="display: none; " id="file2" name="file2" onchange="this.form.submit();" />
+        <!-- <input type="file" name="file2" /> -->
+        <input type="submit" value="View Spectral Centroid">
+    </form>
+
+    {% if name1 %}
+    <p>{{ name1 }}</p>
+    {% endif %}
+
+    {% if name2 %}
+    <p>{{ name2 }}</p>
+    {% endif %}
+
+    {% if plot %}
+    <div>
+        <img src="data:image/png;base64,{{ plot }}" alt="Plot">
+    </div>
+    {% endif %}
+
+</body>
+
+</html>
